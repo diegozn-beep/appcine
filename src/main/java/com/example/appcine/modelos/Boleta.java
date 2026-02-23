@@ -15,6 +15,10 @@ public class Boleta {
     private int cantidad;
     private String metodoPago;
     private String tituloPelicula;
+    private double precio;
+
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
 
     public int getCodigo() { return codigo; }
     public void setCodigo(int codigo) { this.codigo = codigo; }
