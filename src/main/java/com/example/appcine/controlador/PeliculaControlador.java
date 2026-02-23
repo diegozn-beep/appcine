@@ -13,28 +13,9 @@ public class PeliculaControlador {
     @Autowired
     PeliculaRepositorio repo;
 
+    // ✅ Solo este es necesario por si acaso
     @GetMapping("/lista")
     public List<Pelicula> listAll() {
         return repo.findAll();
-    }
-
-    @GetMapping("/buscar/{codigo}")
-    public Pelicula findByCodigo(@PathVariable int codigo) {
-        return repo.findById(codigo).orElse(null);
-    }
-
-    @PostMapping("/registrar")
-    public Pelicula save(@RequestBody Pelicula bean) {
-        return repo.save(bean);
-    }
-
-    @PutMapping("/actualizar")
-    public Pelicula update(@RequestBody Pelicula bean) {
-        return repo.save(bean);
-    }
-
-    @DeleteMapping("/eliminar/{codigo}")
-    public void deleteByCodigo(@PathVariable int codigo) {
-        repo.deleteById(codigo);
     }
 }
